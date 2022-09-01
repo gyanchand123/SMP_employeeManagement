@@ -1,0 +1,74 @@
+.App {
+  
+  background-color: #010d24;
+  min-height: 100vh;
+  color: white;
+   
+}
+ 
+
+label {
+  font-weight: bold;
+  display: flex;
+  margin-bottom: 5px;
+}
+
+input[type='text'],
+input[type='email'],
+input[type='password'],
+textarea, select,input[type='tel'] {
+  display: block;
+  width: 400px;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #555;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  /* margin-bottom: 20px; */
+}
+
+.form-control {
+  margin-bottom: 15px;
+}
+
+.error {
+  color: red;
+}
+button{
+  padding: 4px 6px;
+}
+
+button:disabled {
+  background-color: rgb(158, 50, 135) !important;
+}
+
+ul {
+  display: flex;
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  
+}
+table th{
+  text-align: left;
+}
+
+table td span:not(span:first-child) {
+  margin-left: 4px;
+}
+
+.empImage{
+    margin-left: 12%;
+    width: 57vw;
+    height: 55%;
+}
+
+.notificationAlign{
+  width: 55%;
+  margin-left: 13%;
+}
