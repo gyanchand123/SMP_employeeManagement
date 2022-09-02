@@ -4,6 +4,7 @@ import * as Yup from "yup";
 import FormControl from "./FormControl";
 import { AuthContext } from "../../Services/Authentication/AuthContext";
 import { useNavigate } from "react-router-dom";
+import CommonHeader from "../../utilities/commonHeader/CommonHeader";
 
 const FormContainer = () => {
   const AuthCtx = useContext(AuthContext);
@@ -115,7 +116,7 @@ const FormContainer = () => {
       {(formik) => {
           return (
           <>
-            <h2> {toggleState.formTitle}</h2>
+            <CommonHeader header={toggleState.formTitle}/> 
             <Form>
               <FormControl
                 control="input"
