@@ -45,7 +45,7 @@ button:disabled {
   background-color: rgb(158, 50, 135) !important;
 }
 
-ul {
+.list {
   display: flex;
   list-style-type: none;
 }
@@ -72,3 +72,5 @@ table td span:not(span:first-child) {
   width: 55%;
   margin-left: 13%;
 }
+
+ 

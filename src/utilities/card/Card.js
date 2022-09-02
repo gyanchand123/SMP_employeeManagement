@@ -4,7 +4,7 @@ import "./Card.Module.css";
 const Card = ({ children, dynamicClass, differentBg }) => {
   return (
     <div
-      className={`card ${dynamicClass} ${
+      className={`card ${dynamicClass==='center'&& 'middle-Aligment'} ${
         differentBg && "registrationBackground"
       } `}
     >

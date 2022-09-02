@@ -2,8 +2,12 @@ import React, { useMemo, useContext } from "react";
 import { useSelector } from "react-redux";
 import Notification from "../../utilities/UI/Notification";
 import { AuthContext } from "../../Services/Authentication/AuthContext";
+import Card from "../../utilities/card/Card";
+import CommonHeader from "../../utilities/commonHeader/CommonHeader";
+
 
 const Skills = () => {
+  
   const { isLoading, allSkills } = useSelector((state) => state.skills);
   const { loggedInEmail } = useContext(AuthContext);
   const profiles = useSelector((state) => state.profile);
@@ -15,8 +19,6 @@ const Skills = () => {
       profiles.allProfile.find((profile) => profile.Email === loggedInEmail),
     [profiles, loggedInEmail]
   );
-
-  console.log("match profile:", matchedProfile);
 
   if (isLoading) {
     console.log("inside skill loading status:", isLoading);
@@ -32,28 +34,30 @@ const Skills = () => {
     );
   }
 
-  if (allSkills) {
-    console.log("skills data:", allSkills);
-    console.log('matched skills:',matchedProfile.skills)
-   // const competentSkills = allSkills.map((eachSkills, index) => matchedProfile.skills.includes(index) );
+  if (allSkills && matchedProfile) {
 
-   // console.log("skilllsss:", competentSkills);
-  }
+    const matchedSkillsKey = matchedProfile.skills;
+    const requiredSkills = [];
 
-/*   if (allSkills) {
-    console.log("skills data:", allSkills);
-    const competentSkills = allSkills.map((eachSkills, index) => {
-      const matchedSkills = [];
-      if (matchedProfile.skills.includes(index)) {
-        matchedSkills.push(eachSkills);
+    allSkills[0].forEach((skill, index) => {
+      if (matchedSkillsKey.includes(index)) {
+        requiredSkills.push(skill);
       }
-      return matchedSkills;
     });
 
-    console.log("skilllsss:", competentSkills);
-  } */
-
-  return <></>;
+    return (
+      <Card dynamicClass='center'>
+      <CommonHeader header='Employee Competencies'/> 
+      <ul>
+        {requiredSkills.map((skill) => (
+          <div key={skill}>
+            <li>{skill}</li>
+          </div>
+        ))}
+      </ul>
+      </Card>    
+    );
+  }
 };
 
 export default Skills;

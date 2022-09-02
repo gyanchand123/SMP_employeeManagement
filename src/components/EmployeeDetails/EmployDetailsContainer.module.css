@@ -10,7 +10,7 @@
     margin-right: 8px;
     color: lawngreen;
 }
-
-/* .main + div{
-    height: 64vh;
-} */
+ 
+.active{
+    color:rgb(255, 20, 90)!important;
+}

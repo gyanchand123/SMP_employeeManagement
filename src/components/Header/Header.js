@@ -17,7 +17,7 @@ const Header = () => {
 
   return (
     <header className={classes.parentAlign}>
-      <ul>
+      <ul className="list">
         <li>
           <Link to="/welcome">welcome | </Link>
         </li>

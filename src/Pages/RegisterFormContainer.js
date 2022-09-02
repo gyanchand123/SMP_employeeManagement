@@ -3,7 +3,7 @@ import * as Yup from "yup";
 import { Formik, Form } from "formik";
 import FormControl from "../components/Form/FormControl";
 import Card from "../utilities/card/Card";
-import styles from "./RegisterFormContainer.module.css";
+import CommonHeader from "../utilities/commonHeader/CommonHeader";
 
 const RegisterFormContainer = () => {
   const initialValues = {
@@ -63,123 +63,130 @@ const RegisterFormContainer = () => {
     console.log("registration:", formValues);
     onSubmitProps.setSubmitting(false);
     onSubmitProps.resetForm();
-    console.log('date checking:',formValues)
+    console.log("date checking:", formValues);
   };
 
   return (
-    <Card dynamicClass={styles["middle-Aligment"]} differentBg>
-      <Formik
-        initialValues={initialValues}
-        onSubmit={submitHandler}
-        validationSchema={validationSchema}
-      >
-        {(formik) => {
-          return (
-            <Form>
-              <FormControl
-                control="input"
-                label="EmployeeId"
-                name="Employee_ID_Number"
-                type="text"
-              />
-              <FormControl
-                control="input"
-                label="FirstName"
-                name="First_Name"
-                type="text"
-              />
-              <FormControl
-                control="input"
-                label="MiddleName"
-                name="Middle_Name"
-                type="text"
-              />
-              <FormControl
-                control="input"
-                label="LastName"
-                name="Last_Name"
-                type="text"
-              />
-              <FormControl
-                control="date"
-                label="Date of Birth"
-                name="Date_of_Birth"
-              />
+    <>
+      <Card dynamicClass="center" differentBg>
+        <CommonHeader header="Edit your profile" />
+        <Formik
+          initialValues={initialValues}
+          onSubmit={submitHandler}
+          validationSchema={validationSchema}
+        >
+          {(formik) => {
+            return (
+              <Form>
+                <FormControl
+                  control="input"
+                  label="EmployeeId"
+                  name="Employee_ID_Number"
+                  type="text"
+                />
+                <FormControl
+                  control="input"
+                  label="FirstName"
+                  name="First_Name"
+                  type="text"
+                />
+                <FormControl
+                  control="input"
+                  label="MiddleName"
+                  name="Middle_Name"
+                  type="text"
+                />
+                <FormControl
+                  control="input"
+                  label="LastName"
+                  name="Last_Name"
+                  type="text"
+                />
+                <FormControl
+                  control="date"
+                  label="Date of Birth"
+                  name="Date_of_Birth"
+                />
 
-              <FormControl
-                control="input"
-                label="Phone Number"
-                name="Phone_Number"
-                type="tel"
-              />
+                <FormControl
+                  control="input"
+                  label="Phone Number"
+                  name="Phone_Number"
+                  type="tel"
+                />
 
-              <FormControl control="textarea" label="Address" name="Address" />
-              <FormControl
-                control="input"
-                label="postalCode"
-                name="Postal_Code"
-              />
-              <FormControl
-                control="input"
-                label="Qualification"
-                name="Qualification"
-                type="text"
-              />
-              <FormControl
-                control="input"
-                label="totalExperience"
-                name="total_Experience"
-              />
-              <FormControl
-                control="date"
-                label="Start Date"
-                name="Start_Date"
-              />
-              <FormControl control="date" label="End Date" name="End_Date" />
-              <FormControl
-                control="radio"
-                label="Type of Employee"
-                name="Type_of_Employee"
-                options={employeeTypeOptions}
-              />
-              <FormControl
-                control="input"
-                label="Designation"
-                name="Designation"
-                type="text"
-              />
-              <FormControl
-                control="radio"
-                label="Gender"
-                name="Gender"
-                options={genderOptions}
-              />
-              <FormControl
-                control="radio"
-                label="matial status"
-                name="Marital_Status"
-                options={maritalStatusOptions}
-              />
-              <div className="form-control">
-                <button
-                  type="submit"
-                  disabled={
-                    !(formik.dirty && formik.isValid) || formik.isSubmitting
-                  }
-                  style={{
-                    backgroundColor: "blue",
-                    color: "white",
-                    borderRadius: "3px",
-                  }}
-                >
-                  Submit
-                </button>
-              </div>
-            </Form>
-          );
-        }}
-      </Formik>
-    </Card>
+                <FormControl
+                  control="textarea"
+                  label="Address"
+                  name="Address"
+                />
+                <FormControl
+                  control="input"
+                  label="postalCode"
+                  name="Postal_Code"
+                />
+                <FormControl
+                  control="input"
+                  label="Qualification"
+                  name="Qualification"
+                  type="text"
+                />
+                <FormControl
+                  control="input"
+                  label="totalExperience"
+                  name="total_Experience"
+                />
+                <FormControl
+                  control="date"
+                  label="Start Date"
+                  name="Start_Date"
+                />
+                <FormControl control="date" label="End Date" name="End_Date" />
+                <FormControl
+                  control="radio"
+                  label="Type of Employee"
+                  name="Type_of_Employee"
+                  options={employeeTypeOptions}
+                />
+                <FormControl
+                  control="input"
+                  label="Designation"
+                  name="Designation"
+                  type="text"
+                />
+                <FormControl
+                  control="radio"
+                  label="Gender"
+                  name="Gender"
+                  options={genderOptions}
+                />
+                <FormControl
+                  control="radio"
+                  label="matial status"
+                  name="Marital_Status"
+                  options={maritalStatusOptions}
+                />
+                <div className="form-control">
+                  <button
+                    type="submit"
+                    disabled={
+                      !(formik.dirty && formik.isValid) || formik.isSubmitting
+                    }
+                    style={{
+                      backgroundColor: "blue",
+                      color: "white",
+                      borderRadius: "3px",
+                    }}
+                  >
+                    Submit
+                  </button>
+                </div>
+              </Form>
+            );
+          }}
+        </Formik>
+      </Card>
+    </>
   );
 };
 

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    hi
+
+    <script>
+      const matchedSkillsKey = [1, 3];
+      const allAvailableSkills = ["html", "css", "JS", "typescript", "react"];
+      const requiredSkills = [];
+
+      const matchedSkillsValues = allAvailableSkills.forEach((skill, index) => {
+        console.log('skills:....',skill)
+        console.log('index',index)
+        console.log("index check:", matchedSkillsKey.includes(index));
+
+        if (matchedSkillsKey.includes(index)) {
+          requiredSkills.push(skill);
+        }
+      });
+
+      console.log("result:", requiredSkills);
+    </script>
+  </body>
+</html>

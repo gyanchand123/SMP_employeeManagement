@@ -3,6 +3,8 @@ import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { AuthContext } from "../../Services/Authentication/AuthContext";
 import Notification from "../../utilities/UI/Notification";
+import Card from "../../utilities/card/Card";
+import CommonHeader from "../../utilities/commonHeader/CommonHeader";
 
 const EmployeeDetail = () => {
   const navigate = useNavigate();
@@ -56,7 +58,8 @@ const EmployeeDetail = () => {
     console.log('inside employee details:',matchedProfile)
 
     return (
-      <>
+      <Card dynamicClass='center'>
+        <CommonHeader header='Employee Bio Data'/>     
         <table>
           <tbody>
             <tr>
@@ -76,7 +79,7 @@ const EmployeeDetail = () => {
               <td>{Date_of_Birth}</td>
             </tr>
             <tr>
-              <th>Contact Number : </th>
+              <th>ContactNumber:</th>
               <td>{Phone_Number}</td>
             </tr>
             <tr>
@@ -92,7 +95,7 @@ const EmployeeDetail = () => {
               <td>{Qualification}</td>
             </tr>
             <tr>
-              <th>Total Experience :</th>
+              <th>TotalExperience:</th>
               <td>{total_Experience}</td>
             </tr>
             <tr>
@@ -117,7 +120,7 @@ const EmployeeDetail = () => {
         <button type="button" onClick={handleEdit}>
           Edit
         </button>
-      </>
+      </Card>
     );
   }
 };

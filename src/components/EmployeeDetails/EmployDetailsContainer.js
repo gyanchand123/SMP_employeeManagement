@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Outlet, Link } from "react-router-dom";
+import { Outlet, useLocation, NavLink } from "react-router-dom";
 import styles from "./EmployDetailsContainer.module.css";
 import UseFetchAllDetails from "../../Services/CustomeQuery/UseFetchAllDetails";
 import { useDispatch } from "react-redux";
@@ -7,7 +7,7 @@ import { profileActions } from "../../store/reducers/ProfileSlice";
 import { skillsActions } from "../../store/reducers/SkillsSlice";
 import { projectActions } from "../../store/reducers/ProjectSlice";
 import empployeeImg from "../../../src/assets/img/employee.webp";
-import { useLocation } from "react-router-dom";
+ 
 
 const EmployDetailsContainer = () => {
   const { pathname } = useLocation();
@@ -29,7 +29,8 @@ const EmployDetailsContainer = () => {
   if (isLoading || isFetching) {
     console.log("data is fetching:", isFetching);
     dispatch(profileActions.isFetchingEmpData(true));
-    // dispatch(skillsActions.fetchingStatusUpdate(true));
+    dispatch(skillsActions.fetchingStatusUpdate(true));
+    dispatch(projectActions.fetchingProjectStatus(true));
   }
 
   if (isError) {
@@ -46,6 +47,7 @@ const EmployDetailsContainer = () => {
       dispatch(projectActions.storeProjects(projects));
       dispatch(profileActions.isFetchingEmpData(false));
       dispatch(skillsActions.fetchingStatusUpdate(false));
+      dispatch(projectActions.fetchingProjectStatus(false));
       console.log("inside data in EMP container");
     }
   }, [data, dispatch]);
@@ -53,15 +55,17 @@ const EmployDetailsContainer = () => {
   return (
     <>
       <h2>EmployDetails</h2>
-      <ul className={styles.main}>
+      <ul className={`${styles.main} list`}>
         <li>
-          <Link to="employDetails">Profile</Link>
+          <NavLink to="employDetails" className={(navData)=>(navData.isActive?styles.active:'')}>
+            Profile
+          </NavLink>
         </li>
         <li>
-          <Link to="skills">Skills</Link>
+          <NavLink to="skills" className={(navData)=>(navData.isActive?styles.active:'')}>Skills</NavLink>
         </li>
         <li>
-          <Link to="projects">Project</Link>
+          <NavLink to="projects" className={(navData)=>(navData.isActive?styles.active:'')}>Project</NavLink>
         </li>
       </ul>
       {pathname === "/profile" && (
