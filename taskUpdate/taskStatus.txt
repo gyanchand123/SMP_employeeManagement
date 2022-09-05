@@ -1,0 +1,20 @@
+Friday : 02/09/2022
+-----------------------------------------
+1. add button for each skills 
+2. add newSkill button for the skill page
+3. create a common btn component for all the buttons in the app.
+4. create a custom hook to optimise the code in employeedetail/profile/project page.
+5. format the API fetch date to user Friendly format for emoployee/project file.
+
+
+Task Left for DASHBOARD-1:
+==========================
+To work on the functionality(*sending put/post request to API) : 
+
+1. In the Skill page
+   - delete, 
+   - addNewSkills buttons 
+
+2. In the Profile page :
+   - when click on the edit btn, the edit form must be fill with the respective fill values
+   - when save/submit = click, the new employee data must be updated in the API.
