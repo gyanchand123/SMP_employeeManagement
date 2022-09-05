@@ -1,8 +1,9 @@
 import React, { useContext } from "react";
-import classes from "./Header.module.css";
+import classes from "./Header.module.scss";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Services/Authentication/AuthContext";
 import { useNavigate } from "react-router-dom";
+import CommonButton from "../../utilities/button/CommonButton";
 
 const Header = () => {
   const { isLoggedIn, logout } = useContext(AuthContext);
@@ -32,7 +33,7 @@ const Header = () => {
               <Link to="/profile" >Profile |</Link>
             </li>
             <li>
-              <button onClick={logoutHandler}>logout</button>
+              <CommonButton btnTitle='Logout' onClick={logoutHandler}/>  
             </li>
           </>
         )}

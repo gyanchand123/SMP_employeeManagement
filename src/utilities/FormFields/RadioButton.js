@@ -30,4 +30,4 @@ const RadioButton = ({ name, options, label, ...rest }) => {
   );
 };
 
-export default RadioButton;
+export default React.memo(RadioButton);

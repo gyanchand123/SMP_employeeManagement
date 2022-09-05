@@ -1,43 +1,27 @@
-import React, { useContext, useMemo } from "react";
+import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { AuthContext } from "../../Services/Authentication/AuthContext";
-import Notification from "../../utilities/UI/Notification";
 import Card from "../../utilities/card/Card";
 import CommonHeader from "../../utilities/commonHeader/CommonHeader";
+import CommonButton from "../../utilities/button/CommonButton"; 
+import UseFetchLoggedInUser from "../../Services/CustomHooks/UseFetchLoggedInUser";
+
 
 const EmployeeDetail = () => {
+  
+  console.log("inside EmployeeDetail");  
   const navigate = useNavigate();
-  const profiles = useSelector((state) => state.profile);
-  const { loggedInEmail } = useContext(AuthContext);
+  const profiles = useSelector(state => state.profile);
+  const {notificationComponent,matchedProfile} = UseFetchLoggedInUser(profiles);
 
-  const matchedProfile = useMemo(
-    () =>
-      profiles.allProfile.find((profile) => profile.Email === loggedInEmail),
-    [profiles, loggedInEmail]
-  );
+  if (profiles.isDataFetching) return notificationComponent;
 
   const handleEdit = (event) => {
     event.preventDefault();
     navigate("registration", { replace: true });
   };
-
-  if (profiles.isDataFetching) {
-    console.log('employe detail fetching..')
-
-    return (
-      <div className="notificationAlign">
-        <Notification
-          className
-          status="loading"
-          message="....please be patient"
-          title="loading.................."
-        />
-      </div>
-    );
-  }
-
-  if (matchedProfile) {
+ 
+    if (profiles && matchedProfile) {
     const {
       Employee_ID_Number,
       First_Name,
@@ -53,13 +37,11 @@ const EmployeeDetail = () => {
       Designation,
       Gender,
       Marital_Status,
-    } = matchedProfile;
-
-    console.log('inside employee details:',matchedProfile)
+    } = {...matchedProfile,Date_of_Birth: new Date(matchedProfile.Date_of_Birth).toLocaleDateString('en-US')};
 
     return (
       <Card dynamicClass='center'>
-        <CommonHeader header='Employee Bio Data'/>     
+        <CommonHeader header='Employee Bio Data'/>          
         <table>
           <tbody>
             <tr>
@@ -116,13 +98,12 @@ const EmployeeDetail = () => {
             </tr>
           </tbody>
         </table>
-
-        <button type="button" onClick={handleEdit}>
-          Edit
-        </button>
+        <CommonButton type="button"  onClick={handleEdit} btnTitle='Edit' btn_type='edit_del' />        
       </Card>
     );
-  }
+  } 
+  
+
 };
 
 export default React.memo(EmployeeDetail);

@@ -30,4 +30,4 @@ const DatePicker = ({ name, label, ...rest }) => {
   );
 };
 
-export default DatePicker;
+export default React.memo(DatePicker);

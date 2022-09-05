@@ -5,6 +5,7 @@ import FormControl from "./FormControl";
 import { AuthContext } from "../../Services/Authentication/AuthContext";
 import { useNavigate } from "react-router-dom";
 import CommonHeader from "../../utilities/commonHeader/CommonHeader";
+import CommonButton from "../../utilities/button/CommonButton";
 
 const FormContainer = () => {
   const AuthCtx = useContext(AuthContext);
@@ -131,19 +132,9 @@ const FormContainer = () => {
                 name="password"
               />
               <div className="form-control">
-                <button
-                  type="submit"
-                  disabled={
+              <CommonButton btnTitle='Submit'  type="submit" disabled={
                     !(formik.dirty && formik.isValid) || formik.isSubmitting
-                  }
-                  style={{
-                    backgroundColor: "blue",
-                    color: "white",
-                    borderRadius: "3px",
-                  }}
-                >
-                  Submit
-                </button>
+                  }  />                  
               </div>
             </Form>
             {!isLoading && (

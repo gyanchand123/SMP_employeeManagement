@@ -2,15 +2,15 @@
     padding: 4px;
     border-bottom: 2px solid white;
     border-top: 2px solid white;
+    li a {
+        border-right: 1px solid white;
+        padding: 4px;
+        margin-right: 8px;
+        color: lawngreen;
+    }
 }
 
-.main li a {
-    border-right: 1px solid white;
-    padding: 4px;
-    margin-right: 8px;
-    color: lawngreen;
-}
- 
+  
 .active{
     color:rgb(255, 20, 90)!important;
 }

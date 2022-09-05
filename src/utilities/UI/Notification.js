@@ -1,5 +1,5 @@
 import React from "react";
-import notifyClasses from "./Notification.module.css";
+import notifyClasses from "./Notification.module.scss";
 
 const Notification = (props) => {
   
@@ -26,4 +26,4 @@ const Notification = (props) => {
   );
 };
 
-export default Notification;
+export default React.memo(Notification);

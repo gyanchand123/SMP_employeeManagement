@@ -1,11 +1,8 @@
 .App {
-  
   background-color: #010d24;
   min-height: 100vh;
   color: white;
-   
 }
- 
 
 label {
   font-weight: bold;
@@ -13,10 +10,12 @@ label {
   margin-bottom: 5px;
 }
 
-input[type='text'],
-input[type='email'],
-input[type='password'],
-textarea, select,input[type='tel'] {
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea,
+select,
+input[type="tel"] {
   display: block;
   width: 400px;
   padding: 6px 12px;
@@ -37,12 +36,10 @@ textarea, select,input[type='tel'] {
 .error {
   color: red;
 }
-button{
-  padding: 4px 6px;
-}
-
-button:disabled {
-  background-color: rgb(158, 50, 135) !important;
+button {
+  &:disabled {
+    background-color: rgb(158, 50, 135) !important;
+  }
 }
 
 .list {
@@ -52,25 +49,24 @@ button:disabled {
 
 a {
   text-decoration: none;
-  
 }
-table th{
-  text-align: left;
+table {
+  th {
+    text-align: left;
+
+    td span:not(span:first-child) {
+      margin-left: 4px;
+    }
+  }
 }
 
-table td span:not(span:first-child) {
-  margin-left: 4px;
+.empImage {
+  margin-left: 12%;
+  width: 57vw;
+  height: 55%;
 }
 
-.empImage{
-    margin-left: 12%;
-    width: 57vw;
-    height: 55%;
-}
-
-.notificationAlign{
+.notificationAlign {
   width: 55%;
   margin-left: 13%;
 }
-
- 

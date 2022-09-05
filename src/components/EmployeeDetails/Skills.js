@@ -1,41 +1,22 @@
-import React, { useMemo, useContext } from "react";
+import React from "react";
 import { useSelector } from "react-redux";
-import Notification from "../../utilities/UI/Notification";
-import { AuthContext } from "../../Services/Authentication/AuthContext";
 import Card from "../../utilities/card/Card";
 import CommonHeader from "../../utilities/commonHeader/CommonHeader";
-
+import classes from "./skills.module.scss";
+import CommonButton from "../../utilities/button/CommonButton";
+import UseFetchLoggedInUser from "../../Services/CustomHooks/UseFetchLoggedInUser";
 
 const Skills = () => {
   
-  const { isLoading, allSkills } = useSelector((state) => state.skills);
-  const { loggedInEmail } = useContext(AuthContext);
-  const profiles = useSelector((state) => state.profile);
-
   console.log("inside skill");
+  const profiles = useSelector((state) => state.profile);
+  const { isfetchingStatus, allSkills } = useSelector((state) => state.skills);
+  const { notificationComponent, matchedProfile } = UseFetchLoggedInUser(profiles);
+   
 
-  const matchedProfile = useMemo(
-    () =>
-      profiles.allProfile.find((profile) => profile.Email === loggedInEmail),
-    [profiles, loggedInEmail]
-  );
-
-  if (isLoading) {
-    console.log("inside skill loading status:", isLoading);
-    return (
-      <div className="notificationAlign">
-        <Notification
-          className
-          status="loading"
-          message="....please be patient"
-          title="loading.................."
-        />
-      </div>
-    );
-  }
+  if (isfetchingStatus) return notificationComponent;
 
   if (allSkills && matchedProfile) {
-
     const matchedSkillsKey = matchedProfile.skills;
     const requiredSkills = [];
 
@@ -45,17 +26,27 @@ const Skills = () => {
       }
     });
 
-    return (
-      <Card dynamicClass='center'>
-      <CommonHeader header='Employee Competencies'/> 
+    const skillContents = (
       <ul>
         {requiredSkills.map((skill) => (
-          <div key={skill}>
+          <div key={skill} className={classes.containerDiv}>
             <li>{skill}</li>
+            <CommonButton btnTitle="delete" btn_type="edit_del" />
           </div>
         ))}
       </ul>
-      </Card>    
+    );
+
+    return (
+      <>
+        <Card dynamicClass="center">
+          <CommonHeader header="Employee Competencies" />
+          {skillContents}
+        </Card>
+        <div className={classes.btnAlign}>
+          <CommonButton btnTitle="Add New Skill" />
+        </div>
+      </>
     );
   }
 };

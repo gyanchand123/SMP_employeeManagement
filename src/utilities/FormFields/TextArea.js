@@ -15,4 +15,4 @@ const TextArea = ({name,label,...rest}) => {
   )
 }
 
-export default TextArea
+export default React.memo(TextArea);

@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { Outlet, useLocation, NavLink } from "react-router-dom";
-import styles from "./EmployDetailsContainer.module.css";
+import styles from "./EmployDetailsContainer.module.scss";
 import UseFetchAllDetails from "../../Services/CustomeQuery/UseFetchAllDetails";
 import { useDispatch } from "react-redux";
 import { profileActions } from "../../store/reducers/ProfileSlice";
@@ -8,10 +8,12 @@ import { skillsActions } from "../../store/reducers/SkillsSlice";
 import { projectActions } from "../../store/reducers/ProjectSlice";
 import empployeeImg from "../../../src/assets/img/employee.webp";
  
-
-const EmployDetailsContainer = () => {
+  
+const EmployDetailsContainer = () => { 
+  
   const { pathname } = useLocation();
   const dispatch = useDispatch();
+  const requiredClasses = (navData) => (navData.isActive?styles.active:'');
 
   const onSuccess = (data) => {
     console.log("data:", data);
@@ -57,15 +59,15 @@ const EmployDetailsContainer = () => {
       <h2>EmployDetails</h2>
       <ul className={`${styles.main} list`}>
         <li>
-          <NavLink to="employDetails" className={(navData)=>(navData.isActive?styles.active:'')}>
+          <NavLink to="employDetails" className={requiredClasses}>
             Profile
           </NavLink>
         </li>
         <li>
-          <NavLink to="skills" className={(navData)=>(navData.isActive?styles.active:'')}>Skills</NavLink>
+          <NavLink to="skills" className={requiredClasses}>Skills</NavLink>
         </li>
         <li>
-          <NavLink to="projects" className={(navData)=>(navData.isActive?styles.active:'')}>Project</NavLink>
+          <NavLink to="projects" className={requiredClasses}>Project</NavLink>
         </li>
       </ul>
       {pathname === "/profile" && (

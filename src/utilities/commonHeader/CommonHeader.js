@@ -8,4 +8,4 @@ const CommonHeader = (props) => {
   );
 };
 
-export default CommonHeader;
+export default React.memo(CommonHeader);

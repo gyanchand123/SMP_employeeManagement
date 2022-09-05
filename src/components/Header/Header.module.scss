@@ -1,0 +1,20 @@
+.parentAlign {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  background-color: floralwhite;
+  color: rgb(44, 14, 129);
+
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+
+  & > * {
+    text-decoration: none;
+    padding: 4px;
+  }
+
+  li {
+    margin-right: 5px;
+  }
+}

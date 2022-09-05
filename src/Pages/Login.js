@@ -1,7 +1,7 @@
 import React from "react";
 import FormContainer from "../components/Form/LoginFormContainer";
 import Card from "../utilities/card/Card";
-import styles from "./Login.module.css";
+import styles from "./Login.module.scss";
 
 const Login = () => {
   return (

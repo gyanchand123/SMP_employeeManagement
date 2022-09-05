@@ -1,0 +1,16 @@
+.containerDiv {
+  margin: 4px;
+  padding: 4px;
+  display: flex;
+  justify-content: space-between;
+
+  & > li {
+    flex: 1;
+  }
+}
+
+.btnAlign {
+  width: 10%;
+  margin-left: 60.9%;
+  margin-top: 6px;
+}

@@ -4,4 +4,4 @@ const ErrorHighLight = (props) => {
   return <div className="error">{props.children}</div>;
 };
 
-export default ErrorHighLight;
+export default React.memo(ErrorHighLight);

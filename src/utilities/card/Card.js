@@ -1,5 +1,5 @@
 import React from "react";
-import "./Card.Module.css";
+import "./Card.Module.scss";
 
 const Card = ({ children, dynamicClass, differentBg }) => {
   return (
@@ -13,4 +13,4 @@ const Card = ({ children, dynamicClass, differentBg }) => {
   );
 };
 
-export default Card;
+export default React.memo(Card);

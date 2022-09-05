@@ -4,6 +4,7 @@ import { Formik, Form } from "formik";
 import FormControl from "../components/Form/FormControl";
 import Card from "../utilities/card/Card";
 import CommonHeader from "../utilities/commonHeader/CommonHeader";
+import CommonButton from "../utilities/button/CommonButton";
 
 const RegisterFormContainer = () => {
   const initialValues = {
@@ -167,19 +168,13 @@ const RegisterFormContainer = () => {
                   options={maritalStatusOptions}
                 />
                 <div className="form-control">
-                  <button
+                  <CommonButton
+                    btnTitle="Submit"
                     type="submit"
                     disabled={
                       !(formik.dirty && formik.isValid) || formik.isSubmitting
                     }
-                    style={{
-                      backgroundColor: "blue",
-                      color: "white",
-                      borderRadius: "3px",
-                    }}
-                  >
-                    Submit
-                  </button>
+                  />
                 </div>
               </Form>
             );
