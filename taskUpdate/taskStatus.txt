@@ -18,3 +18,13 @@ To work on the functionality(*sending put/post request to API) :
 2. In the Profile page :
    - when click on the edit btn, the edit form must be fill with the respective fill values
    - when save/submit is click after editing  , the new employee data must be updated in the API.
+
+   
+   Monday- [05-09-2022]
+   ==========================
+
+   1. started working on the adding new skill 
+        - building up required html part +
+        - valdation part done.
+
+   2. will make the API patch/put call and complete it today.     
