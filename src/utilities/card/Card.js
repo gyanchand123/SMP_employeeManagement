@@ -1,16 +1,14 @@
 import React from "react";
-import "./Card.Module.scss";
+import  './Card.scss';
 
-const Card = ({ children, dynamicClass, differentBg }) => {
-  return (
-    <div
-      className={`card ${dynamicClass==='center'&& 'middle-Aligment'} ${
-        differentBg && "registrationBackground"
-      } `}
-    >
-      {children}
-    </div>
-  );
+const Card = ({ children, dynamicClass, differentBg,skill }) => {
+
+  const requiredClasses = `card   
+  ${dynamicClass === "center" && "middle-Aligment"}
+  ${differentBg &&  "registrationBackground"}
+  ${skill && "modal modalAlignment"} `;
+
+  return <div className={requiredClasses}>{children}</div>;
 };
 
 export default React.memo(Card);

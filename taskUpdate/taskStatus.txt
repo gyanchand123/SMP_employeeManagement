@@ -7,7 +7,7 @@ Friday : 02/09/2022
 5. format the API fetch date to user Friendly format for emoployee/project file.
 
 
-Task Left for DASHBOARD-1:
+Task Left for DASHBOARD-1:[05/09/2022]
 ==========================
 To work on the functionality(*sending put/post request to API) : 
 
@@ -17,4 +17,4 @@ To work on the functionality(*sending put/post request to API) :
 
 2. In the Profile page :
    - when click on the edit btn, the edit form must be fill with the respective fill values
-   - when save/submit = click, the new employee data must be updated in the API.
+   - when save/submit is click after editing  , the new employee data must be updated in the API.

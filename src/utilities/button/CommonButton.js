@@ -1,8 +1,9 @@
 import React from "react";
 import classes from "./CommonBtn.module.scss";
 
-const CommonButton = ({ btnTitle, btn_type,...rest }) => {
+const CommonButton = (props) => {
 
+  const { btnTitle, btn_type,...rest } = props;
   const requireClasses = `${classes.btn} ${
     btn_type === "edit_del" ? classes.edit_delete : classes.generalBtnBackgrd
   }`;

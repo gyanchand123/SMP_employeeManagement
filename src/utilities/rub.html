@@ -10,7 +10,7 @@
   
 
       <script>
-           const matchedSkillsKey = [1, 3];
+    /*   const matchedSkillsKey = [1, 3];
       const allAvailableSkills = ["html", "css", "JS", "typescript", "react"];
       const requiredSkills = [];
 
@@ -24,7 +24,29 @@
         }
       });
 
-      console.log("result:", requiredSkills);  
+      console.log("result:", requiredSkills);   */
+      const dropdownOptions =  { 
+      key1: "Option 1",
+      value2: "option1", 
+      key3: "Option 2",
+      value4: "option2", 
+      key5: "Option 3",
+      value6: "option3"
+    }
+
+    const keys =Object.keys(dropdownOptions);
+    console.log('all keys:',keys);
+
+    for( let key in dropdownOptions){
+      console.log('all inner keys:',key);
+    }
+ 
+    
+   
+    
+  ;
+      
+      
       </script>
     </td>
   </body>

@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useContext} from "react";
 import { useSelector } from "react-redux";
 import Card from "../../utilities/card/Card";
 import CommonHeader from "../../utilities/commonHeader/CommonHeader";
 import classes from "./skills.module.scss";
 import CommonButton from "../../utilities/button/CommonButton";
 import UseFetchLoggedInUser from "../../Services/CustomHooks/UseFetchLoggedInUser";
+import Main from "../../utilities/popup/Main";
+import { PopUpContext } from "../../Services/PopUpContext/PopUpContext";
 
 const Skills = () => {
   
@@ -12,7 +14,9 @@ const Skills = () => {
   const profiles = useSelector((state) => state.profile);
   const { isfetchingStatus, allSkills } = useSelector((state) => state.skills);
   const { notificationComponent, matchedProfile } = UseFetchLoggedInUser(profiles);
-   
+  const {popUpState,togglePopUp} =useContext(PopUpContext);
+
+  
 
   if (isfetchingStatus) return notificationComponent;
 
@@ -44,7 +48,10 @@ const Skills = () => {
           {skillContents}
         </Card>
         <div className={classes.btnAlign}>
-          <CommonButton btnTitle="Add New Skill" />
+          <CommonButton btnTitle="Add New Skill" onClick={togglePopUp} />
+        </div>
+        <div>
+         {popUpState && <Main title='Add New Skill' message='new skill added'/>}
         </div>
       </>
     );

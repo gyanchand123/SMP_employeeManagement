@@ -3,6 +3,7 @@ import DatePicker from "../../utilities/FormFields/DatePicker";
 import Input from "../../utilities/FormFields/Input";
 import RadioButton from "../../utilities/FormFields/RadioButton";
 import TextArea from "../../utilities/FormFields/TextArea";
+import Select from "../../utilities/FormFields/Select";
 
 const FormControl = ({ control, ...rest }) => {
 
@@ -11,6 +12,7 @@ const FormControl = ({ control, ...rest }) => {
     case 'radio': return <RadioButton {...rest}/>
     case  'date': return <DatePicker {...rest}/>
     case  'textarea' : return <TextArea {...rest}/>
+    case  'select': return <Select {...rest}/>
     default: return null;
 
  }
