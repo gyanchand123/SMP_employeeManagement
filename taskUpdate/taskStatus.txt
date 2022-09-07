@@ -28,3 +28,7 @@ To work on the functionality(*sending put/post request to API) :
         - valdation part done.
 
    2. will make the API patch/put call and complete it today.     
+
+      Tuesday- [06-09-2022]
+   ==========================
+      - handling add new skill almost done.Need to resolve a bug->still figuring out.
