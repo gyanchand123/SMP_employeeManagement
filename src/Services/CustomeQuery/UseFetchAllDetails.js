@@ -3,7 +3,7 @@ import axios from 'axios'
 
 const fetchingEmp_Project_Details = () => {
   return axios.get(
-    "https://react-http-a6eb6-default-rtdb.firebaseio.com/employeeDetails.json"
+    "http://localhost:3000/employeeDetails"
   );
 };
 

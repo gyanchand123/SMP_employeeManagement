@@ -29,6 +29,15 @@ To work on the functionality(*sending put/post request to API) :
 
    2. will make the API patch/put call and complete it today.     
 
-      Tuesday- [06-09-2022]
+   Tuesday- [06-09-2022]
    ==========================
       - handling add new skill almost done.Need to resolve a bug->still figuring out.
+
+    wednesday- [07-09-2022]
+   ==========================
+      - my current json file is not accepting a put request.
+      - always getting 404 error even though the resources is available.
+      - something might be wrong with the way how I have construct the json nested data.
+      - trying to get an employee details based on his id.
+      -everytime when i used this url[http://localhost:3000/employeeDetails/profile/usera] to get a specific resource , its giving me 404.
+      - don't understand this behaviour, will try to figure out today

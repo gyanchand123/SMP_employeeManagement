@@ -1,98 +1,99 @@
 {
-    "superheroes": [
-      {
-        "id": 1,
-        "name": "Batman",
-        "alterEgo": "Bruce Wayne"
-      },
-      {
-        "id": 2,
-        "name": "Super man",
-        "alterEgo": "Clerk Kent"
-      },
-      {
-        "id": 3,
-        "name": "Wonder Women112233",
-        "alterEgo": "Princess Diana"
-      },
-      {
-        "name": "thambi",
-        "alterEgo": "moirangthem",
-        "id": 4
-      },
-      {
-        "name": "gyan",
-        "alterEgo": "moirang",
-        "id": 5
-      },
-      {
-        "name": "cat women",
-        "alterEgo": "selina kyle",
-        "id": 6
-      }
-    ],
-    "freinds": [
-      {
-        "id": 1,
-        "name": "chandler"
-      },
-      {
-        "id": 2,
-        "name": "Rcikey"
-      },
-      {
-        "id": 3,
-        "name": "Bomberang"
-      }
-    ],
-    "users": [
-      {
-        "id": "gyan@gmail.com",
-        "channelId": "code-evolution"
-      }
-    ],
-    "channels": [
-      {
-        "id": "code-evolution",
-        "courses": [
-          "react",
-          "vue",
-          "angular"
-        ]
-      }
-    ],
-    "colors": [
-      {
-        "id": 1,
-        "label": "red"
-      },
-      {
-        "id": 2,
-        "label": "blue"
-      },
-      {
-        "id": 3,
-        "label": "green"
-      },
-      {
-        "id": 4,
-        "label": "yellow"
-      },
-      {
-        "id": 5,
-        "label": "black"
-      },
-      {
-        "id": 6,
-        "label": "orange"
-      },
-      {
-        "id": 7,
-        "label": "violet"
-      },
-      {
-        "id": 8,
-        "label": "pink"
-      }
-    ]
-  }
+  "superheroes": [
+    {
+      "id": 1,
+      "name": "Batman",
+      "alterEgo": "Bruce Wayne"
+    },
+    {
+      "id": 2,
+      "name": "Super man",
+      "alterEgo": "Clerk Kent"
+    },
+    {
+      "id": 3,
+      "name": "Wonder Women112233",
+      "alterEgo": "Princess Diana"
+    },
+    {
+      "name": "thambi",
+      "alterEgo": "moirangthem",
+      "id": 4
+    },
+    {
+      "name": "gyan",
+      "alterEgo": "moirang",
+      "id": 5
+    },
+    {
+      "name": "cat women",
+      "alterEgo": "selina kyle",
+      "id": 6
+    }
+  ],
+  "freinds": [
+    {
+      "id": 1,
+      "name": "chandler"
+    },
+    {
+      "id": 2,
+      "name": "Rcikey"
+    },
+    {
+      "id": 3,
+      "name": "Bomberang"
+    }
+  ],
+  "users": [
+    {
+      "id": "gyan@gmail.com",
+      "channelId": "code-evolution"
+    }
+  ],
+  "channels": [
+    {
+      "id": "code-evolution",
+      "courses": [
+        "react",
+        "vue",
+        "angular"
+      ]
+    }
+  ],
+  "colors": [
+    {
+      "id": 1,
+      "label": "red"
+    },
+    {
+      "id": 2,
+      "label": "blue"
+    },
+    {
+      "id": 3,
+      "label": "green"
+    },
+    {
+      "id": 4,
+      "label": "yellow"
+    },
+    {
+      "id": 5,
+      "label": "black"
+    },
+    {
+      "id": 6,
+      "label": "orange"
+    },
+    {
+      "id": 7,
+      "label": "violet"
+    },
+    {
+      "id": 8,
+      "label": "pink"
+    }
+  ]
+}
+ 

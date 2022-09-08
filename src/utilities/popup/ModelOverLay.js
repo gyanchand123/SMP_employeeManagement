@@ -13,25 +13,35 @@ import UseHttp from "../../Services/CustomHooks/UseHttp";
  
 
 const ModelOverLay = ({ title}) => {
-
+  console.log('MODEL part 4')
   const { togglePopUp } = useContext(PopUpContext);
   const { allSkills } = useSelector((state) => state.skills);
   const [skillsOption, setSkillsOption] = useState([]);
   const profiles = useSelector((state) => state.profile);
   const {userId:matchedProfileId}  = UseFindMatchedProfileId();
   const { matchedProfile } = UseFetchLoggedInUser(profiles);
+  const { isLoading, error, sendingRequest: sendTaskRequest } = UseHttp();
   
   useMemo(() => {
     const dropDownOptions = [{ key: "select a skill", value: "" }];
-    allSkills[0].forEach((skill, index) =>
-      dropDownOptions.push({ key:skill , value: index })
-    );
+    const collectiveSkills = allSkills[0];
+
+    Object.keys(collectiveSkills).forEach(key => {
+      dropDownOptions.push({key:collectiveSkills[key], value:key})
+    }); 
+    console.log('dropdown:',dropDownOptions)
     setSkillsOption(dropDownOptions);
   }, [allSkills]);
 
- 
 
-  const loadingReducer = (state,action) => {
+
+  const validationSchema = Yup.object({
+    selectOption: Yup.string().required("*required"),
+  });
+
+  console.log('MODEL part ERROR :4',error)
+
+ /*  const loadingReducer = (state,action) => {
     if(action.type==='LOAD_ERROR')  return {isLoading:action.payload.loadVal, error:action.payload.errorVal} 
     return state.intialLoadingState;
   }
@@ -39,16 +49,29 @@ const ModelOverLay = ({ title}) => {
   const [putLoadErrorState,dispatchLoading]  = useReducer(loadingReducer,{
     isLoading:false,
     error:null
-  });
+  }); */
+  
+  const addNewSkillTaskHandler = async (matchedProfileId,duplicateProfile) => {
+    console.log('inside api')
+    sendTaskRequest(
+      {
+        url: `https://react-http-a6eb6-default-rtdb.firebaseio.com/employeeDetails/employeeDetails/0/profile/${matchedProfileId}.json`,
+        method: "PUT",
+        body: JSON.stringify(duplicateProfile),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }   
+    );
+  };
  
-  const validationSchema = Yup.object({
-    selectOption: Yup.string().required("*required"),
-  });
 
   const updatingSkillsForUser = (selectedSkill) => {
 
     if(matchedProfile && selectedSkill) {
         const duplicateProfile = JSON.parse(JSON.stringify(matchedProfile));
+       // console.log('clone:',JSON.parse(JSON.stringify(matchedProfile)));
+        console.log('match',matchedProfile);
         const existingSkills = duplicateProfile.skills.includes(selectedSkill);
         console.log('level1')
         console.log('level1--',matchedProfileId)
@@ -56,28 +79,14 @@ const ModelOverLay = ({ title}) => {
         if(!existingSkills) {
           console.log('level2')
           console.log('level2--',matchedProfileId)
+          console.log('level2--skill',duplicateProfile.skills)
           duplicateProfile.skills.push(selectedSkill);
           if(matchedProfileId||matchedProfileId===0) {
             
             console.log('level3')
             console.log('level3--',matchedProfileId);
 
-            const { isLoading, error, sendingRequest: sendTaskRequest } = UseHttp();
-
-            const enterTaskHandler = async (taskText) => {
-              sendTaskRequest(
-                {
-                  url: `https://react-http-a6eb6-default-rtdb.firebaseio.com/employeeDetails/employeeDetails/0/profile/${matchedProfileId}.json`,
-                  method: "PUT",
-                  body: JSON.stringify(duplicateProfile),
-                  headers: {
-                    "Content-Type": "application/json",
-                  },
-                }   
-              );
-            };
-            enterTaskHandler();
-            dispatchLoading({type:'LOAD_ERROR',payload:{loadVal:isLoading,errorVal:error}});          
+         //   addNewSkillTaskHandler(matchedProfileId,duplicateProfile);      
           }  
         } else {
           alert('skill already exists!! Please select a different skill');
@@ -87,8 +96,7 @@ const ModelOverLay = ({ title}) => {
 
   const onSubmit = (values) => {
     updatingSkillsForUser(+values.selectOption);
-   // if(!putLoadErrorState.isLoading || !putLoadErrorState.error) togglePopUp();
-    if(!putLoadErrorState.error) togglePopUp();
+    if(!error) togglePopUp();
   };
 
   const selectFormContents = (<Formik initialValues={ {selectOption: ""}} 
@@ -113,8 +121,8 @@ const ModelOverLay = ({ title}) => {
       <div className={classes.content}>
         {selectFormContents}
       </div>  
-      {putLoadErrorState.isLoading && <span>loading......</span>}
-      {putLoadErrorState.error && <span>{putLoadErrorState.error}......</span>}
+      {isLoading && <span>loading......</span>}
+      {error && <span>{error}......</span>}
     </Card>
   );
 };

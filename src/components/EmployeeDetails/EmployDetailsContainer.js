@@ -29,7 +29,7 @@ const EmployDetailsContainer = () => {
   );
 
   if (isLoading || isFetching) {
-    console.log("data is fetching:", isFetching);
+    console.log("data is fetching PART 1:", isFetching);
     dispatch(profileActions.isFetchingEmpData(true));
     dispatch(skillsActions.fetchingStatusUpdate(true));
     dispatch(projectActions.fetchingProjectStatus(true));
@@ -50,7 +50,7 @@ const EmployDetailsContainer = () => {
       dispatch(profileActions.isFetchingEmpData(false));
       dispatch(skillsActions.fetchingStatusUpdate(false));
       dispatch(projectActions.fetchingProjectStatus(false));
-      console.log("inside data in EMP container");
+      console.log("inside data in EMP container PART 2");
     }
   }, [data, dispatch]);
 

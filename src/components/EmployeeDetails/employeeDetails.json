@@ -4,47 +4,65 @@
             "id": "profile",
             "profile": [
                 {
-                    "Employee_ID_Number": 1,
-                    "First_Name": "Gyan",
-                    "Last_Name": "Singh",
-                    "Middle_Name": "Moirangthem",
-                    "Email": "gyan@sonata.com",
-                    "Date_of_Birth": "Wed Mar 08 1994 00:00:00 GMT+0530 (India Standard Time)",
-                    "Phone_Number": "9654123987",
-                    "Address": "Bangalore , India 76002",
-                    "Postal_Code": "56310",
-                    "Qualification": "B.tech",
-                    "total_Experience": "4",
-                    "Start_Date": "Wed Mar 08 2021 00:00:00 GMT+0530 (India Standard Time)",
-                    "End_Date": "Wed Aug 08 2021 00:00:00 GMT+0530 (India Standard Time)",
-                    "Type_of_Employee": "permanent",
-                    "Designation": "software Engineer",
-                    "Gender": "male",
-                    "Marital_Status": "unmarried",
-                    "skills":[1,3],
-                    "projects":["ZYW3VTp"]
+                    "id":"usera",
+                    "usera": {
+                        "Employee_ID_Number": 1,
+                        "First_Name": "Gyan",
+                        "Last_Name": "Singh",
+                        "Middle_Name": "Moirangthem",
+                        "Email": "gyan@sonata.com",
+                        "Date_of_Birth": "Wed Mar 08 1994 00:00:00 GMT+0530 (India Standard Time)",
+                        "Phone_Number": "9654123987",
+                        "Address": "Bangalore , India 76002",
+                        "Postal_Code": "56310",
+                        "Qualification": "B.tech",
+                        "total_Experience": "4",
+                        "Start_Date": "Wed Mar 08 2021 00:00:00 GMT+0530 (India Standard Time)",
+                        "End_Date": "Wed Aug 08 2021 00:00:00 GMT+0530 (India Standard Time)",
+                        "Type_of_Employee": "permanent",
+                        "Designation": "software Engineer",
+                        "Gender": "male",
+                        "Marital_Status": "unmarried",
+                        "skills": [
+                            1,
+                            3
+                        ],
+                        "projects": [
+                            "ZYW3VTp"
+                        ]
+                    }
                 },
-                {
-                    "EmpId": 2,
-                    "First_Name": "Smith",
-                    "Last_Name": "Singh",
-                    "Middle_Name": "chawdary",
-                    "Email": "Smith@sonata.com",
-                    "Date_of_Birth": "Wed Mar 08 1994 00:00:00 GMT+0530 (India Standard Time)",
-                    "Phone_Number": "9654177987",
-                    "Address": "Delhi , India 77009",
-                    "Postal_Code": "66310",
-                    "Qualification": "M.tech",
-                    "total_Experience": "6",
-                    "Start_Date": "Wed Mar 08 2021 00:00:00 GMT+0530 (India Standard Time)",
-                    "End_Date": "Wed Aug 08 2021 00:00:00 GMT+0530 (India Standard Time)",
-                    "Type_of_Employee": "permanent",
-                    "Designation": "cloud Engineer",
-                    "Gender": "male",
-                    "Marital_Status": "married",
-                    "skills":[2,5],
-                    "projects":["ZYW3VTe"]
+                {   "id":"userb",
+                    "userb": 
+                        {
+                            "Employee_ID_Number": 2,
+                            "First_Name": "Smith",
+                            "Last_Name": "Singh",
+                            "Middle_Name": "chawdary",
+                            "Email": "Smith@sonata.com",
+                            "Date_of_Birth": "Wed Mar 08 1994 00:00:00 GMT+0530 (India Standard Time)",
+                            "Phone_Number": "9654177987",
+                            "Address": "Delhi , India 77009",
+                            "Postal_Code": "66310",
+                            "Qualification": "M.tech",
+                            "total_Experience": "6",
+                            "Start_Date": "Wed Mar 08 2021 00:00:00 GMT+0530 (India Standard Time)",
+                            "End_Date": "Wed Aug 08 2021 00:00:00 GMT+0530 (India Standard Time)",
+                            "Type_of_Employee": "permanent",
+                            "Designation": "cloud Engineer",
+                            "Gender": "male",
+                            "Marital_Status": "married",
+                            "skills": [
+                                2,
+                                5
+                            ],
+                            "projects": [
+                                "ZYW3VTe"
+                            ]
+                        }
+
                 }
+             
             ]
         },
         {
