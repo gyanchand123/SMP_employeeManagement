@@ -53,6 +53,12 @@ To work on the functionality(*sending put/post request to API) :
         [so i reoptimised the old code , code is not yet pushed though- will do tommorrow morning]
         
         > tommorrow i will do : adding new skill for the signIn user[Put/patch request]
+        -------------
+        
+        TASK PENDING SO FAR: 
+        =========================
+        - 3 operations in dashboard1 section: adding new skills, deleting any existing skills, editing existing employee details.
+        - dashboard 2 section: not yet started.
        
        
        
