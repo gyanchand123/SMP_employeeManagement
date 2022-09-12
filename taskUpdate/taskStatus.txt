@@ -41,3 +41,17 @@ To work on the functionality(*sending put/post request to API) :
       - trying to get an employee details based on his id.
       -everytime when i used this url[http://localhost:3000/employeeDetails/profile/usera] to get a specific resource , its giving me 404.
       - don't understand this behaviour, will try to figure out today
+      
+      Monday--12/09/2022:
+      =====================================
+      - currently working on dashboard-1 section:
+       > displaying signIn employee details/related skills/project involved done.
+        [*this parts were done last week, but the data-structure in my json file was incorrect]
+        [so i reoptimised the old code , code is not yet pushed though- will do tommorrow morning]
+        
+        > tommorrow i will do : adding new skill for the signIn user[Put/patch request]
+       
+       
+       
+      
+      
