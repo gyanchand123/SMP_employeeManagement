@@ -42,6 +42,9 @@ To work on the functionality(*sending put/post request to API) :
       -everytime when i used this url[http://localhost:3000/employeeDetails/profile/usera] to get a specific resource , its giving me 404.
       - don't understand this behaviour, will try to figure out today
       
+      these days gap: got spent in learning about JSON(*dealing with the above issues) and preparing  UEP too.---
+      ==============
+      
       Monday--12/09/2022:
       =====================================
       - currently working on dashboard-1 section:
